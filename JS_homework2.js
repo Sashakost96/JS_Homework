@@ -11,7 +11,7 @@
 
 
 
-let age = +prompt(`Введіть рік `, 101);
+let age = +prompt(`Введіть рік `, `101`);
 
     if(age < 0)
     {
