@@ -10,22 +10,23 @@
 */
 
 
-const prompt = require('prompt-sync')();
-let age = +prompt(`Please enter your age `, -1);
+
+let age = +prompt(`Введіть рік `, 101);
+
     if(age < 0)
     {
         console.log("Помилка: число від'ємне");
     }
-        else if(age === 1 || age%10 === 1) //перевірка 1 і все що з 1
+        else if(age === 1 || age%10 == 1) //перевірка 1 і все що з 1
         {
-            console.log("Тобі " + age + " рік");
+            console.log(age + " рік");
         }
         else if((age > 1 && age <= 4) || (age%10 === 2 || age%10 === 3 || age%10 === 4)) //перевірка 2 до 4 і все що з 2,3,4
         {
-            console.log("Тобі " + age + " роки");
+            console.log(age + " роки");
         }
-        else if ((age >= 5 || age <= 100) && (age%2 <2)) //перевірка 5 до 100
+        else if ((age >= 5 || age <= 150) && (age%2 < 2 || age%10 >= 5)) //перевірка 5 до 150
         {
-            console.log("Тобі " + age + " років");
+            console.log(age + " років");
         }
     else console.log("Помилка: введений тип не є числом");
