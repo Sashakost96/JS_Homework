@@ -1,35 +1,7 @@
-/*ДЗ 1
 
-Вам необхідно намалювати в консолі прямокутний трикутник із зірочок (або плюсиків, або якогось іншого символу):
-на першому рядку - одна зірочка, на другій дві, і так далі. Рішення оформіть у вигляді функції, 
-куди передаються два параметри: висота трикутника та символ, яким його потрібно "малювати".
+//First realisation
 
-Якось так:
-drawTriangle(5, *);
-
-*
-
-**
-
-***
-
-****
-
-*****
-
-Умови виконання ДЗ
-
-Домашню роботу необхідно зробити двома способами
-В задачі не потрібно використовувати prompt або щось інше пов'язане з UI
-Не використовувати функції або інші матеріали які ми не вивчали
-Намагайтесь робити ДЗ самостійно та не дивитися будь-які підказки
-Будь ласка, надайте наступні дані для перевірки вашої роботи:
-
-Створіть гілку js_hw_loops.
-Додати туди ваше домашнє завдання
-Вислати вашу гілку
- */
-
+/* 
 let high;
 let i;
 let symbolToDisplay;
@@ -41,3 +13,38 @@ function letsDraw (high, symbol) {
     }
 }
 letsDraw (5, `⚪`);
+*/ 
+
+//Second realisation
+
+let high;
+let i=1;
+let symbolToDisplay;
+function letsDraw (high, symbol) {  
+  symbolToDisplay = symbol;
+      while (i <= high){
+        console.log(symbolToDisplay)
+        symbolToDisplay += symbol
+        i++;
+      }
+        
+}
+letsDraw (5, `⚪`);
+
+//Third realisation (just for practice) 
+/*
+let high;
+let i=1;
+let symbolToDisplay;
+function letsDraw (high, symbol) {  
+    symbolToDisplay = symbol
+    do {
+       
+        console.log(symbolToDisplay)
+        symbolToDisplay += symbol
+        i++;
+    } while (i <= high);
+        
+}
+letsDraw (5, `⚪`);
+*/
