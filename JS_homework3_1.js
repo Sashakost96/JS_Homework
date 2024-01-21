@@ -1,6 +1,5 @@
 
-//First realisation
-
+// First realisation
 /* 
 let high;
 let i;
@@ -15,7 +14,7 @@ function letsDraw (high, symbol) {
 letsDraw (5, `⚪`);
 */ 
 
-//Second realisation
+// Second realisation
 
 let high;
 let i=1;
@@ -31,7 +30,7 @@ function letsDraw (high, symbol) {
 }
 letsDraw (5, `⚪`);
 
-//Third realisation (just for practice) 
+// Third realisation (just for practice) 
 /*
 let high;
 let i=1;
