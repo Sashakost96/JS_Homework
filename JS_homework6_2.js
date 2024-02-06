@@ -42,38 +42,31 @@ const company = {
 }
 
 function findValueByKey(companyName, company) {
-    
-    if (company.name === companyName) {
-        return company;
-    }
+    const stack = [company];
 
-    
-    if (company.clients) {
-        for (const client of company.clients) {
-            if (client.name === companyName) {
-                return client;
-            }
+    while (stack.length > 0) {
+        const currentCompany = stack.pop();
 
-            
-            if (client.partners) {
-                const subCompany = findValueByKey(companyName, { clients: client.partners });
-                if (subCompany) {
-                    return subCompany;
-                }
-            }
+        if (currentCompany.name === companyName) {
+            return currentCompany;
         }
+        if (currentCompany.clients)  {
+            stack.push(...currentCompany.clients); //to the end
+        }
+        if (currentCompany.partners) {
+            stack.push(...currentCompany.partners);
+        }
+        
     }
-
     
     return null;
 }
 
-
-const companyNameToFind = 'Клієнт 1.2.3';
-const subCompanyInfo = findValueByKey(companyNameToFind, company);
+const myCompanyIs = 'Клієнт 1';
+const subCompanyInfo = findValueByKey(myCompanyIs, company);
 
 if (subCompanyInfo) {
-    console.log(`Інформація про компанію "${companyNameToFind}":`, subCompanyInfo);
+    console.log(`Інформація про компанію "${myCompanyIs}":`, subCompanyInfo);
 } else {
-    console.log(`Компанія "${companyNameToFind}" не знайдена.`);
+    console.log(`Компанія "${myCompanyIs}" не знайдена.`);
 }
